@@ -10,9 +10,9 @@ const router = require("./routes/router");
 
 const app = express();
 
-app.use(cors());
+app.use(cors({ credentials: true, origin: true }));
 app.use(express.json());
-app.use(cookieParser(""));
+app.use(cookieParser());
 app.use(router);
 
 const port = process.env.PORT || 8005;

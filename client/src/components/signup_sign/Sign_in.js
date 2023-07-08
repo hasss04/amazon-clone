@@ -11,7 +11,6 @@ const Sign_in = () => {
     email: "",
     password: "",
   });
-  console.log(logdata);
 
   const { account, setAccount } = useContext(LoginContext);
 
@@ -40,6 +39,7 @@ const Sign_in = () => {
         email,
         password,
       }),
+      credentials: "include",
     });
 
     const data = await res.json();
@@ -86,7 +86,7 @@ const Sign_in = () => {
                 onChange={adddata}
                 value={logdata.password}
                 name="password"
-                placeholder="At least 6 char"
+                placeholder="At least 6 characters"
                 id="password"
               />
             </div>
@@ -96,7 +96,7 @@ const Sign_in = () => {
           </form>
         </div>
         <div className="create_accountinfo">
-          <p>New To Amzon</p>
+          <p>New To Amazon?</p>
           <NavLink to="/register">
             {" "}
             <button>Create Your amazon account</button>
